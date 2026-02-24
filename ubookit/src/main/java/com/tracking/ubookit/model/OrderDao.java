@@ -20,6 +20,10 @@ import lombok.NoArgsConstructor;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * JPA entity representing an order in the orders_tracking table.
+ * Stores all order, location, and delivery information in a single row.
+ */
 @Entity
 @Table(name = "orders_tracking")
 @Data
@@ -28,6 +32,7 @@ import java.util.List;
 @Builder
 public class OrderDao {
 
+    /** Shared Jackson mapper for deserializing the JSON route column. */
     private static final ObjectMapper mapper = new ObjectMapper();
 
     @Id
@@ -72,9 +77,11 @@ public class OrderDao {
 
     private int progress;
 
+    /** Route stored as a JSON array of coordinates in the database (TEXT column). */
     @Column(name = "route", columnDefinition = "TEXT")
     private String route;
 
+    /** Converts this entity to a summary DTO (used in the order list endpoint). */
     public Orders toDto() {
         return Orders.builder()
                 .id(this.id)
@@ -87,6 +94,7 @@ public class OrderDao {
                 .build();
     }
 
+    /** Converts this entity to a full tracking response DTO (used in the tracking endpoint). */
     public TrackingResponse toTrackingResponse() {
         return TrackingResponse.builder()
                 .id(this.id)
@@ -100,6 +108,7 @@ public class OrderDao {
                 .build();
     }
 
+    /** Deserializes the JSON route string into a list of Coordinate objects. */
     private List<Coordinate> parseRoute() {
         if (this.route == null || this.route.isBlank()) {
             return Collections.emptyList();

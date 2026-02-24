@@ -8,6 +8,10 @@ import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.SuperBuilder;
 
+/**
+ * Response DTO for the tracking endpoint.
+ * Contains full delivery details: locations, driver position, ETA, and route.
+ */
 @Data
 @SuperBuilder
 @NoArgsConstructor

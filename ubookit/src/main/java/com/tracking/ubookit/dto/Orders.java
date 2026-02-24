@@ -5,11 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Builder;
 
+/**
+ * DTO representing a summary view of an order (used in the order list).
+ */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Orders { 
+public class Orders {
 
     private String id;
     private String status;

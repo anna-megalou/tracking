@@ -8,7 +8,10 @@ import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 
-
+/**
+ * Response DTO for the order list endpoint.
+ * Wraps a list of order summaries along with the common status fields.
+ */
 @Data
 @SuperBuilder
 @NoArgsConstructor

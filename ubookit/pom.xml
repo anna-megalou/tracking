@@ -12,7 +12,7 @@
 	<artifactId>ubookit</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ubookit</name>
-	<description>Demo project for Spring Boot</description>
+	<description>UBookIt - Book order tracking application built with Spring Boot MVC</description>
 	<url/>
 	<licenses>
 		<license/>
