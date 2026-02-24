@@ -21,8 +21,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class TrackingController {
 
-    private static final String ORDER_ID_PATTERN = "^U\\d+$";
-
     private final TrackingService trackingService;
 
     /** Returns a summary list of all orders in the system. */
