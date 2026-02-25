@@ -32,7 +32,7 @@ public class TrackingController {
 
     /**
      * Returns detailed tracking information for a specific order.
-     * The order ID must match the pattern "U" followed by digits (e.g. U44653).
+     * The order ID must match the pattern "U" followed by digits.
      */
     @GetMapping("/{id}/tracking")
     public ResponseEntity<TrackingResponse> getTracking(@PathVariable String id) {
